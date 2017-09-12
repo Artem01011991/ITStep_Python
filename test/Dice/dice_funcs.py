@@ -1,3 +1,4 @@
+#functions' file
 from random import randint
 from os import system
 from time import sleep
