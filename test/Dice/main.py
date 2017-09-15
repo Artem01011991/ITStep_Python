@@ -1,8 +1,7 @@
 #main file
 from dice_funcs import * 
 
-game_begin()
-throw_dice()
+game_process(game_begin())
 
 input()
 
