@@ -94,10 +94,8 @@ def game_setting_single():
 
 def game_run_singl(from_game_set):
     playername, playeraccount, compname, compaccount = from_game_set
-
 # player makes a bet
     answer = ''
-
     while answer.upper() != 'NO' and playeraccount != 0 and compaccount != 0:
         playerbet = -1
         while playerbet <= 0 or playerbet > playeraccount:
