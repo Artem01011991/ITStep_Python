@@ -23,6 +23,7 @@ def deck_shuffle():
     shuffle(deck)
     return deck
 
+#total points sum function
 def sum_card(temp_hand):
     hand = temp_hand.copy()
     color_card = {'A':(11, 1),'J': 10, 'Q': 10, 'K': 10}
@@ -44,11 +45,12 @@ def sum_card(temp_hand):
 
     return result
 
-
+#main function runs the game
 def game():
     player = init_player()
     deck = deck_shuffle()
 
+#bet block
     bet = None
     while player > 0:
         while True:
@@ -65,6 +67,7 @@ def game():
 
         hand = [deck.pop(randint(0, len(deck) - 1)) for _ in range(2)]
         Dealer_hand = [deck.pop(randint(0, len(deck) - 1))]
+
 #Start a game with 21 BLACK JACK
         if  sum_card(hand) == 21 and Dealer_hand[0] not in {'A','J','Q','K',10}:
             print("BLACK JACK")
@@ -100,13 +103,14 @@ def game():
                     sleep(3)
                     system('cls')
                     continue
-
+#END BLACK JACK BLOCK
 
         print("Your hand: ",' '.join([str(i) for i in hand]), end ='\t\t\t')
         print("Dealer hand: ", str(Dealer_hand[0]))
 
-        choice = {1:'more', 2:'enough'}
 #Taking cards
+        choice = {1:'more', 2:'enough'}
+
         while True:
             print("\n\n\n1. take a card.\n"
                   "2. complete taking cards")
@@ -131,6 +135,9 @@ def game():
                 print("Your hand: ", ' '.join([str(i) for i in hand]), end='\t\t\t')
                 print("Dealer hand: ", str(Dealer_hand[0]))
                 continue
+#END BLOCK TAKING CARDS
+
+#Dealer taking cards
         sleep(2)
         system('cls')
         if sum_card(hand) <= 21:
@@ -141,6 +148,7 @@ def game():
                 sleep(2)
                 system('cls')
 
+#Winner checking
             if sum_card(Dealer_hand) > 21:
                 print("Your hand: ", ' '.join([str(i) for i in hand]), end='\t\t\t')
                 print("Dealer hand: ", ' '.join([str(i) for i in Dealer_hand]))
@@ -161,6 +169,7 @@ def game():
                 print("\nYou won!!!")
                 player += bet
             print("\n\nYour account equal: ",player)
+
 #exit
         quit_game = input("If you want to leave type in 'exit':")
         system('cls')
