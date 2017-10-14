@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c820249-ffdb-4e8a-9b00-9d73065cb1a6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prod/prod_file.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Dice/dice_funcs.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Dice/main.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/test_file.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="9c820249-ffdb-4e8a-9b00-9d73065cb1a6" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
