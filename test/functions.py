@@ -52,7 +52,7 @@ def game():
 
 #bet block
     bet = None
-    while player > 0:
+    while True:
         while True:
             try:
                 print("Your account equal: ", player)
@@ -111,9 +111,9 @@ def game():
 #Taking cards
         choice = {1:'more', 2:'enough'}
 
+        print("\n\n\n1. take a card.\n"
+              "2. complete taking cards")
         while True:
-            print("\n\n\n1. take a card.\n"
-                  "2. complete taking cards")
             try:
                 if  choice.get(int(input())) == 'more':
                     hand += [deck.pop(randint(0, len(deck) - 1))]
@@ -131,10 +131,11 @@ def game():
                 print("Dealer hand: ", str(Dealer_hand[0]))
             except ValueError:
                 system('cls')
-                print("(Only 1 or 2)")
                 print("Your hand: ", ' '.join([str(i) for i in hand]), end='\t\t\t')
                 print("Dealer hand: ", str(Dealer_hand[0]))
-                continue
+                print("\n\n\n1. take a card.\n"
+                      "2. complete taking cards")
+                print("(Only 1 or 2)")
 #END BLOCK TAKING CARDS
 
 #Dealer taking cards
@@ -171,6 +172,11 @@ def game():
             print("\n\nYour account equal: ",player)
 
 #exit
+        if player <= 0:
+            print("You have wasted all your money!!!")
+            sleep(3)
+            break
+
         quit_game = input("If you want to leave type in 'exit':")
         system('cls')
         if quit_game.upper() == 'EXIT':
