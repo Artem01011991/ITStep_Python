@@ -68,7 +68,7 @@ def game():
         hand = [deck.pop(randint(0, len(deck) - 1)) for _ in range(2)]
         Dealer_hand = [deck.pop(randint(0, len(deck) - 1))]
 
-#Start a game with 21 BLACK JACK
+#Start a game with 21 BLACK
         if  sum_card(hand) == 21 and Dealer_hand[0] not in {'A','J','Q','K',10}:
             print("BLACK JACK")
             player += (bet * 3)
