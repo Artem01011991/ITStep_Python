@@ -129,6 +129,8 @@ def game():
                 system('cls')
                 print("Your hand: ", ' '.join([str(i) for i in hand]), end ='\t\t\t')
                 print("Dealer hand: ", str(Dealer_hand[0]))
+                print("\n\n\n1. take a card.\n"
+                      "2. complete taking cards")
             except ValueError:
                 system('cls')
                 print("Your hand: ", ' '.join([str(i) for i in hand]), end='\t\t\t')
