@@ -4,6 +4,17 @@ from random import randint
 from os import system
 from time import sleep
 
+class Player:
+    hand = []
+
+    def __init__(self, name, money):
+        self.name = name
+        self.money = money
+
+    def sum_card(self):
+
+
+
 def init_player():
 
     while True:

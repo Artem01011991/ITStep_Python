@@ -1,0 +1,32 @@
+<TamagotchiGame>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'back.jpg'
+
+
+    Label:
+        color: 1, 0 ,0 ,1
+        font_size: 25
+        center_x: root.width / 10
+        top: root.top
+        text: "health - {0}%".format(root.critter_health)
+
+    Label:
+        color: 1, 0 ,0 ,1
+        font_size: 25
+        center_x: root.width / 3
+        top: root.top
+        text: "hungre - {0}".format(root.critter_hungre)
+
+    Button:
+        center: root.center_x + 300, root.center_y - 300
+        size: root.width/4,root.height/12
+        text: 'feed'
+        on_release: root.feed_critter()
+
+    Image:
+        center: root.center_x - 20, root.center_y - 150
+        size: root.width,root.height/2
+        source: "pic.png"
