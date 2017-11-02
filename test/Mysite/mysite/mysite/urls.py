@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from chat.views import registration_page
 
 
 urlpatterns = [
-    url(r'^main/', include('chat.urls')),
+    url(r'^$', registration_page),
+    url(r'^userpage/', include('chat.urls')),
     url(r'^admin/', admin.site.urls),
 ]

@@ -6,6 +6,7 @@ class UserAccount(models.Model):
     second_name = models.CharField(max_length=20)
     nick_name = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
+    repassword = models.CharField(max_length=100, verbose_name='Re-password')
     email = models.EmailField(verbose_name='E-mail')
 
     def __str__(self):

@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .models import UserAccount
 from .forms import RegistrationForm
@@ -7,11 +8,15 @@ def registration_page(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            valid_form = form.cleaned_data
+            form.save()
+            return HttpResponseRedirect('/userpage/')
+    else:
+        form = RegistrationForm()
+    return render(request, 'register_page.html', {'form': form})
 
 
-def main(request):
-    return render(request, 'chat/temp1.html')
+def user_page(request):
+    return render(request, 'chat/userpage.html')
 
 def users_online(request):
     UO_amount = UserAccount.objects.count()
