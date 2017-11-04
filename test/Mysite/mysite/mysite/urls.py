@@ -19,7 +19,7 @@ from chat.views import registration_page
 
 
 urlpatterns = [
-    url(r'^$', registration_page),
+    url(r'^$', registration_page, name='registration_page'),
     url(r'^userpage/', include('chat.urls')),
     url(r'^admin/', admin.site.urls),
 ]

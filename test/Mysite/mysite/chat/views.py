@@ -1,24 +1,43 @@
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
-from .models import UserAccount
+from django.shortcuts import render, redirect
 from .forms import RegistrationForm
-# Create your views here.
+from django.contrib.auth import authenticate , login, logout
 
 def registration_page(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
+
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/userpage/')
+            # Username and password should be received at raw form
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            # Logs in the user for current session
+            user = authenticate(request, username=username, password=raw_password)
+            login(request, user)
+
+            return redirect('/userpage/')
+    elif request.user.is_authenticated():
+
+        return redirect('/userpage/')
     else:
         form = RegistrationForm()
+
     return render(request, 'register_page.html', {'form': form})
 
 
 def user_page(request):
+    if request.method == 'POST':
+        logout(request)
+
+        return redirect(r'^login/')
+
+    if not request.user.is_authenticated():
+
+        return redirect(r'^login/')
+
+
+
     return render(request, 'chat/userpage.html')
 
-def users_online(request):
-    UO_amount = UserAccount.objects.count()
-    response = {'amount':UO_amount}
-    return render(request, 'chat/count_users.html', response)
+
+

@@ -5,20 +5,13 @@
     <title>Register page</title>
 </head>
 <body>
-    <h1>Register</h1>
-
-    {% if form.errors %}
-        <p style="color: red;">
-            Please correct the error{{ form.error | pluralize}} below.
-        </p>
-    {% endif %}
-
-    <form action="" method="post" novalidate>
-        <table>
-            {{ form.as_table }}
-        </table>
+    <h1>Registration</h1>
+    <form action="" method="post" >
         {% csrf_token %}
-        <input type="submit" value="Submit">
+        {{ form.as_p }}
+        <button type="submit">Sign up</button>
     </form>
+    <input type="submit" value="Log-in"
+           onclick="window.location='/userpage/login';" />
 </body>
 </html>
