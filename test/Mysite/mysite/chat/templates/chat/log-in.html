@@ -5,11 +5,16 @@
     <title>Log-in page</title>
 </head>
 <body>
+    <div class="row">
+        <h2 class="text-center" style="color: #5cb85c;">Log-in page.</h2>
+        <hr>
+    </div>
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Log-in</button>
     </form >
+    <h1>To registration page.</h1>
             <input type="submit" value="Registration"
            onclick="window.location='/'" />
 </body>

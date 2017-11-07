@@ -16,14 +16,15 @@ def registration_page(request):
             login(request, user)
 
             return redirect('/userpage/')
+    # Whether user have authenticated already
     elif request.user.is_authenticated():
 
         return redirect('/userpage/')
+    # Black form have been passed
     else:
         form = RegistrationForm()
 
     return render(request, 'register_page.html', {'form': form})
-
 
 def user_page(request):
     if request.method == 'POST':
@@ -34,8 +35,6 @@ def user_page(request):
     if not request.user.is_authenticated():
 
         return redirect(r'^login/')
-
-
 
     return render(request, 'chat/userpage.html')
 
