@@ -20,7 +20,7 @@ def registration_page(request):
     elif request.user.is_authenticated():
 
         return redirect('/userpage/')
-    # Black form have been passed
+    # Blank form have been passed
     else:
         form = RegistrationForm()
 

@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Log-in page</title>
-</head>
-<body>
-    <div class="row">
-        <h2 class="text-center" style="color: #5cb85c;">Log-in page.</h2>
-        <hr>
+{% extends "register_page.html" %}
+{% block title %}<title>Log-in page</title>{% endblock %}
+{% block body %}
+    <div class="container col-5">
+        <div class="col" style="padding: 20px;outline: 2px solid #99ff66; margin:100px; background: #ffb84d" >
+            <h2 class="text-center" style="color: #5cb85c;">Log-in page</h2>
+            <hr>
+            <form action="" method="post">
+                {% csrf_token %}
+                {% if form.errors %}
+                <div class="alert alert-danger">{{ form.errors }}</div>
+                {% endif %}
+                <input type="text" placeholder="Enter the username" class="form-control" name="username" maxlength="120" required id="id_username">
+                <p></p>
+                <input type="password" placeholder="Enter the password" class="form-control" name="password" required id="id_password">
+                <p></p>
+                <div class="row">
+                    <div class="col"><button type="submit" class="btn btn-success">Log-in</button></div>
+                    <div class="col-right"><input type="button" class="btn btn-outline-secondary" value="For registration" onclick="window.location='/'" /></div>
+                </div>
+            </form >
+        </div>
     </div>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Log-in</button>
-    </form >
-    <h1>To registration page.</h1>
-            <input type="submit" value="Registration"
-           onclick="window.location='/'" />
-</body>
+{% endblock %}

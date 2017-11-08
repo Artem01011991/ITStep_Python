@@ -1,7 +1,13 @@
-{% if user.is_authenticated %}
-    <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
-<form action="" method="post">
-    {% csrf_token %}
-    <button type="submit" >Log-out</button>
-</form>
-{% endif %}
+{% extends "register_page.html" %}
+{% block title %}<title>User page</title>{% endblock %}
+{% block body %}
+    <div class="row" style="padding:2px; margin:2px">
+        <div class="col-2" style="outline:2px solid #ffb84d;padding:10px;margin:10px">
+        <form action="" method="post">
+            {% csrf_token %}
+            <button type="submit">Log-out</button>
+        </form>
+        </div>
+        <div class="col" style="outline:2px solid #ffb84d;margin:10px; padding:10px"></div>
+    </div>
+{% endblock %}
