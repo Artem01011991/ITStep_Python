@@ -1,13 +1,23 @@
 {% extends "register_page.html" %}
 {% block title %}<title>User page</title>{% endblock %}
 {% block body %}
+        <nav class="navbar sticky-top" style="outline:2px solid #ffb84d; background:#ffb84d">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle float-xl-right" style="background:#ffad33; outline:1px solid" type="button" data-toggle="dropdown">Menu<span class="caret"></span> </button>
+                <ul class="dropdown-menu">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-block">Log-out</button>
+                    </form>
+                </ul>
+            </div>
+        </nav>
     <div class="row" style="padding:2px; margin:2px">
-        <div class="col-2" style="outline:2px solid #ffb84d;padding:10px;margin:10px">
-        <form action="" method="post">
-            {% csrf_token %}
-            <button type="submit">Log-out</button>
-        </form>
+        <div class="col-3" style="outline:2px solid #ffb84d;padding:10px;margin:10px">
+            <label class="btn btn-default">
+                {% load static %}<image src="{% static 'chat/user_photo.jpg' %}"></image>
+                <input type="file" hidden>
+            </label>
         </div>
-        <div class="col" style="outline:2px solid #ffb84d;margin:10px; padding:10px"></div>
     </div>
 {% endblock %}
