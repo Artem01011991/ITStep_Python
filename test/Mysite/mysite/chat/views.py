@@ -27,7 +27,7 @@ def registration_page(request):
     return render(request, 'register_page.html', {'form': form})
 
 def user_page(request):
-    if request.method == 'POST':
+    if 'logout' in request.GET:
         logout(request)
 
         return redirect(r'^login/')

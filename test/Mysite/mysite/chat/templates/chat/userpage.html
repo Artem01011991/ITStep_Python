@@ -5,9 +5,9 @@
             <div class="dropdown">
                 <button class="btn dropdown-toggle float-xl-right" style="background:#ffad33; outline:1px solid" type="button" data-toggle="dropdown">Menu<span class="caret"></span> </button>
                 <ul class="dropdown-menu">
-                    <form action="" method="post">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-block">Log-out</button>
+                    <form action="" method="get">
+                        {{ logout }}
+                        <input type="submit" class="btn btn-block" value="Log-out" name="logout">
                     </form>
                 </ul>
             </div>
