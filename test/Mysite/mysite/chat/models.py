@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
-from django.db.models import ImageField
+from django.db import models
 # Create your models here.
 
-class UserAccount(User):
-    user_photo = ImageField(null=True, blank=True)
+
+class UserAccount(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user_photo = models.ImageField(upload_to='userphoto/')

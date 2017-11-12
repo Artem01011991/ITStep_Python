@@ -14,10 +14,13 @@
         </nav>
     <div class="row" style="padding:2px; margin:2px">
         <div class="col-3" style="outline:2px solid #ffb84d;padding:10px;margin:10px">
-            <label class="btn btn-default">
-                {% load static %}<image src="{% static 'chat/user_photo.jpg' %}"></image>
-                <input type="file" hidden>
-            </label>
+            <form enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button class="btn" type="submit">send</button>
+            </form>
+                {{ user.user_photo.name }}
         </div>
     </div>
 {% endblock %}
