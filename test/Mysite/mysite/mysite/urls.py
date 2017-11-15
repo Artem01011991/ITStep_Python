@@ -13,15 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.conf.urls.static import static
 from django.conf.urls import url, include
 from django.contrib import admin
-from chat.views import registration_page
 from django.conf import settings
-from django.conf.urls.static import static
+from chat import views
 
 
 urlpatterns = [
-    url(r'^$', registration_page, name='registration_page'),
+    url(r'^$', views.registration_page, name='registration_page'),
     url(r'^userpage/', include('chat.urls')),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

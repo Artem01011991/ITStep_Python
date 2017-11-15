@@ -1,6 +1,7 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
-    <block>
+    <head>
         <meta charset="UTF-8">
         <!-- For mobile devises -->
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,12 +11,60 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        <style type="text/css">
+  .fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.fullscreen-bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+    background: url('../img/videoframe.jpg') center center / cover no-repeat;
+  }
+
+  .fullscreen-bg__video {
+    display: none;
+  }
+}
+}</style>
     </head>
     <body>
+        <div class="fullscreen-bg">
+        <video autoplay="" loop="" poster="" class="fullscreen-bg__video" src="http://static.videezy.com/system/resources/previews/000/000/328/original/bokeh2.mp4" fullscrin>
+        </video>
+        </div>
     {% block body %}
-    <div class="container col-5">
-            <div class="col" style="padding: 10px;outline: 2px solid #0040ff; margin:100px; background: #ffb84d" >
-                <h1 class="text-center" style="color:#0040ff">Registration</h1>
+    <div class="container col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-6">
+        <div class="row">
+            <div class="col col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-8 rounded" style="padding: 10px; margin:100px; background: rgba(255, 153, 51, 0.7)" >
+                <h1 class="text-center display-4" style="color:#0040ff;">Registration</h1>
                 <hr>
                 <div class="col">
                     <form action="" method="post">
@@ -24,25 +73,27 @@
                             {% if form.username.errors %}
                             <div class="alert alert-danger">{{ form.username.errors }}</div>
                             {% endif %}
-                            <label for="id_username"></label> <input type="text" placeholder="Enter username" class="form-control" name="username" maxlength="150" required="" id="id_username">
-                            <label for="id_password1"></label> <input type="password" placeholder="Enter password" class="form-control" name="password1" required="" id="id_password1">
+                            <input type="text" placeholder="Enter username" class="form-control" name="username" maxlength="150" required="" id="id_username">
+                            <br>
+                            <input type="password" placeholder="Enter password" class="form-control" name="password1" required="" id="id_password1">
+                            <br>
                             {% if form.password2.errors %}
                             <div class="alert alert-danger">{{ form.password2.errors }}</div>
                             {% endif %}
-                            <label for="id_password2"></label> <input type="password" placeholder="Enter password again" class="form-control" name="password2" required="" id="id_password2">
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <button type="submit" class="btn btn-primary">Sign up</button>
-                            </div>
-                            <div class="col-right">
-                                <button type="button" class="btn btn-outline-secondary" onclick="window.location.href='/userpage/login/'">Sign in</input>
-                            </div>
+                            <input type="password" placeholder="Enter password again" class="form-control" name="password2" required="" id="id_password2">
+                            <br>
+                            <button type="submit" class="btn btn-block" style="background: #0040ff; font-family: 'Titillium Web', sans-serif; font-size: 20px; color: rgba(255, 153, 51, 0.7)">Sign up</button>
                         </div>
                     </form>
+
+                        <div class="row" style="float: right;">
+<label class="text" style="font-family: 'Titillium Web', sans-serif;color: #f2f2f2;">Already have an account?</label>
+                                <a href="/userpage/login/" style="font-family: 'Titillium Web', sans-serif;">Sign in</a>
+                        </div>
+                </div>
                 </div>
             </div>
-        </div>
+    </div>
     {% endblock %}
     </body>
 </html>
