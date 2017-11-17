@@ -21,7 +21,7 @@
                     {% if user.useraccount.user_photo %}
                     <img src="{{ user.useraccount.user_photo.url }}" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 image-fluid" style="padding: 0px">
                     {% else %}
-                    <img src="{% static 'chat/user_photo.jpg' %}" alt="static err">
+                    <img src="{% static 'chat/user_photo.jpg' %}" alt="static err" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 image-fluid">
                     {% endif %}
                 <input type="file" name="user_photo" id="id_user_photo" required="" hidden>
                 </label>

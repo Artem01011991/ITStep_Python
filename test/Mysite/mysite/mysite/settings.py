@@ -25,7 +25,7 @@ SECRET_KEY = 'ki*0nurs6*t9ln1s^u6u%=kyi=qs)s=i7f3f^29)61(xsku_nb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['artem010191.pythonanywhere.com']
 
 
 # Application definition
@@ -120,7 +120,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
+
+
 LOGIN_REDIRECT_URL = '/userpage/'
 
+
 MEDIA_URL = '/media/'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
