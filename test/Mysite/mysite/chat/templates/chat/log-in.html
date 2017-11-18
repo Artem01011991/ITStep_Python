@@ -1,4 +1,4 @@
-{% extends "register_page.html" %}
+{% extends "chat/register_page.html" %}
 {% block title %}<title>Log-in page</title>{% endblock %}
 {% block body %}
     <div class="container col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-6">
@@ -19,7 +19,7 @@
                     <br>
                     <div class="row" style="float: right;">
                         <label class="text" style="font-family: 'Titillium Web', sans-serif;color: #f2f2f2;">Don't have a one?</label>
-                        <a href="/" style="font-family: 'Titillium Web', sans-serif;">Registration</a></div>
+                        <a href="{% url 'chat:registration_page' %}" style="font-family: 'Titillium Web', sans-serif;">Registration</a></div>
                 </form >
             </div>
         </div>

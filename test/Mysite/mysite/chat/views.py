@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import RegistrationForm, UserPageForm
 from django.contrib.auth import authenticate, login, logout
 
+
 def registration_page(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
@@ -24,24 +25,27 @@ def registration_page(request):
     else:
         form = RegistrationForm()
 
-    return render(request, 'register_page.html', {'form': form})
+    return render(request, 'chat/register_page.html', {'form': form})
 
 
 def user_page(request):
     if request.method == 'POST' and request.FILES['user_photo']:
         form = UserPageForm(request.POST, request.FILES, instance=request.user.useraccount)
+
         if form.is_valid():
             form.save()
 
-            return render(request, 'chat/userpage.html', {'form': form})
+            return redirect('/userpage/')
+
     if 'logout' in request.GET:
         logout(request)
 
-        return redirect(r'^login/')
+        return redirect(r'login/')
 
     if not request.user.is_authenticated():
 
-        return redirect(r'^login/')
+        return redirect(r'login/')
+
     form = UserPageForm(instance=request.user)
 
     return render(request, 'chat/userpage.html', {'form': form})

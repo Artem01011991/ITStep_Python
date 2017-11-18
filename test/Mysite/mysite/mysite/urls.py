@@ -17,11 +17,9 @@ from django.conf.urls.static import static
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
-from chat import views
 
 
 urlpatterns = [
-    url(r'^$', views.registration_page, name='registration_page'),
-    url(r'^userpage/', include('chat.urls')),
+    url(r'^', include('chat.urls', namespace='mysite-chat', app_name='chat')),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

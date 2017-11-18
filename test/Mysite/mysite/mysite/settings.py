@@ -25,7 +25,10 @@ SECRET_KEY = 'ki*0nurs6*t9ln1s^u6u%=kyi=qs)s=i7f3f^29)61(xsku_nb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['artem010191.pythonanywhere.com']
+ALLOWED_HOSTS = [
+    'artem010191.pythonanywhere.com',
+    'localhost',
+]
 
 
 # Application definition
