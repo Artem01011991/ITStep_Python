@@ -2,8 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c820249-ffdb-4e8a-9b00-9d73065cb1a6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Mysite/mysite/mysite/settings.py" afterPath="$PROJECT_DIR$/test/Mysite/mysite/mysite/settings.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/.idea/books.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/book/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/book/admin.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/book/apps.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/book/forms.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/book/migrations/0001_initial.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/book/migrations/0002_auto_20171031_1520.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/book/migrations/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/book/models.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/book/templates/books/search_form.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/book/templates/books/search_results.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/book/templates/contact_form.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/book/tests.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/book/urls.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/book/views.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/books/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/books/settings.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/books/urls.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/books/wsgi.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/db.sqlite3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/books/books/manage.py" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -86,8 +108,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/Mysite/mysite/chat/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="39" lean-forward="false" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+            <state relative-caret-position="357">
+              <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -777,8 +799,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/Mysite/mysite/chat/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="39" lean-forward="false" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        <state relative-caret-position="357">
+          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
